@@ -1,0 +1,31 @@
+hardware_interface:
+  joints:
+    - stationary_base_spin_base_joint
+    - spin_base_arm1_joint
+    - arm1_arm2_joint
+    - arm2_arm3_joint
+    - arm3_gripper1_joint
+    - arm3_gripper2_joint
+
+
+controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 1
+
+controller_list:
+  - name: arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - stationary_base_spin_base_joint
+      - spin_base_arm1_joint
+      - arm1_arm2_joint
+      - arm2_arm3_joint
+  - name: gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - arm3_gripper1_joint
+      - arm3_gripper2_joint

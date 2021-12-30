@@ -1,0 +1,7 @@
+controller_joint_names:
+  - stationary_base_spin_base_joint
+  - spin_base_arm1_joint
+  - arm1_arm2_joint
+  - arm2_arm3_joint
+  - arm3_gripper1_joint
+  - arm3_gripper2_joint
